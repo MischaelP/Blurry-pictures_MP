@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1 class="text-3xl font-bold underline">Hello world</h1>
-    <p>Ceci est un texte</p>
+    <p class="text-red-600">Ceci est un texte rouge</p>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
