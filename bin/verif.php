@@ -28,7 +28,8 @@ if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'
         if (($verifFirstName && $verifName && $verifPseudo /*&& $verifPassword*/)==true){
             echo "Tout est Ok <br>";
            
-           include "../bin/checkEmail.php";
+           include "./checkEmail.php";
+        //    include "../bin/checkEmail.php";
             
 
             // include "../bin/create_new_user.php";
