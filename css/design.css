@@ -11,6 +11,16 @@
     grid-template-rows: auto auto auto auto;
 }
 
+
+header ul {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 1em;
+}
+
+header ul li {
+    margin-right: 1em;
+}
 body{
     padding: 0,5em;
     background-color: #ECB5F7;
@@ -25,8 +35,9 @@ body{
 .lat_menu {
     grid-area: lat_menu;
     border: 1px black solid;
-    background-color: #f5f1ec;
-    align-items: center;
+    background-color: white;
+    padding-left: 4em;
+    padding-top: 1em;
  
 }
 
