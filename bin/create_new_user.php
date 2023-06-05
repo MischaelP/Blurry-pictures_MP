@@ -21,8 +21,8 @@ if(! $ok){
     echo "L'inscription a échouée : ".$errorInfo[2];
                         } else
                         {
-                            echo "Votre inscription est un succès : " . $pseudo;
-                            echo " <a href='../index.php'>Connectez-vous.</a>";
+                            echo "Votre inscription est un succès : " . $pseudo."<br>";
+                            echo " <a href='../index.php'>Connectez-vous.</a><br>";
                         
 }
 
