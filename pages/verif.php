@@ -1,23 +1,44 @@
 <?php 
 
-if (isset($_POST['firstName'], $_POST['name'], $_POST['email'], $_POST['pseudo'], $_POST['password'])) {
-    echo 'ok';
-    // est-ce que les var sont initialisées si oui afficher ok
-    $firstName= filter_var($_POST['firstName'],FILTER_SANITIZE_STRING);
-    $name= filter_var($_POST['name'],FILTER_SANITIZE_STRING);
-    $email= filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
-    $pseudo= filter_var($_POST['pseudo'],FILTER_SANITIZE_STRING);
-    $password= filter_var($_POST['password'],FILTER_SANITIZE_STRING);
-    //empeche le code de prendre en compte si la psn met des balises html dans les inputs, les met en texte
-    if (preg_match('/^[0-9a-zA-Z]{8,}$/', $_POST['password'])) {
-        echo 'mdp ok';
+if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'])&& !empty($_POST['pseudo'])/*&& !empty($_POST['password'])*/
+) 
+    {
+        echo 'Ok <br>';
+        echo 'formulaire soumis<br>';
+        // est-ce que les var sont initialisées si oui afficher ok
+        $firstName= htmlspecialchars($_POST['firstName']);
+        $name= htmlspecialchars($_POST['name']);
+        $email= filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+        $pseudo= htmlspecialchars($_POST['pseudo']);
+        $password= htmlspecialchars($_POST['password']);
+        // empeche le code de prendre en compte si la psn met des balises html dans les inputs, les met en texte
+        if (preg_match('/^[0-9a-zA-Z]{8,}$/', $_POST['password'])) {
+            echo 'mdp ok<br>';
+        }else{
+            echo 'mdp Nok<br>';
+        }
+            //on verifie que les inputs ont une taille minimale grâce aux regex
+        
+
+        $verifFirstName = preg_match('/^[a-zA-Z]{2,}$/', $firstName) ? true : false;
+        $verifName = preg_match('/^[a-zA-Z\s]{2,}$/', $name) ? true : false;
+        $verifPseudo = preg_match('/^[0-9a-zA-Z]{2,}$/', $pseudo) ? true : false;
+        $verifPassword = preg_match('/^[0-9a-zA-Z]{8,}$/', $password) ? true : false;
+
+        if (($verifFirstName && $verifName && $verifPseudo /*&& $verifPassword*/)==true){
+            echo "Tout est Ok <br>";
+           
+           include "../bin/checkEmail.php";
+            
+
+            // include "../bin/create_new_user.php";
+        }else {
+            echo "revoir le formulaire";
+        }
+    }else{
+        echo "<a href='../pages/inscription.php'>Remplir tous les champs</a>";
+        
     }
-        //on verifie que les inputs ont une taille minimale grâce aux regex
-    echo (preg_match('/^[a-zA-Z]{2,}$/', $firstName)) ? "Valide" : "Non valide";
-    echo (preg_match('/^[a-zA-Z]{2,}$/', $name)) ? "Valide" : "Non valide";
-    echo (preg_match('/^[a-zA-Z]{2,}$/', $pseudo)) ? "Valide" : "Non valide";
-    
-}
 
 
 
@@ -32,6 +53,4 @@ if (isset($_POST['firstName'], $_POST['name'], $_POST['email'], $_POST['pseudo']
 
 
 
-
-
-?>
+    ?>

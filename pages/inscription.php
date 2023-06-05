@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/inscription.css">
 </head>
 <body>
+
     
    
        <div class="box"> 
@@ -23,9 +24,12 @@
             Pseudo  <input type="text" name="pseudo" id="pseudo" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="pseudo">
             Mot de passe <input type="password" name="password" id="input password" class="border-solid border-2 border-stone-400 rounded pl-2" placeholder="xxxxxxxxx">
            <button type="submit" value="Création" class="button rounded-full border-solid border-2 border-transparent bg-slate-300 m-2 rounded"> Création </button>
+
         </form>
             </div>
       </div>
+    
+  
     
 </body>
 </html>
