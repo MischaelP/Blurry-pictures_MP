@@ -7,17 +7,23 @@ $nom=$_POST['name'];
 $email=$_POST['email'];
 $pseudo=$_POST['pseudo'];
 $mdp=$_POST['password'];
-
+$mdp=md5($mdp);
 
 $data = [$nom,$prenom,$email,$mdp,$pseudo];
 
 
-echo "test $prenom";
-
 $newUser = $pdo->prepare("INSERT INTO `testusers`( `name`, `firstName`,`email`, `password`, `pseudo`) VALUES (?,?,?,?,?)");
-$newUser->execute($data);
+$ok = $newUser->execute($data);
 
-echo "<br> test $nom";
-
+if(! $ok){
+    $errorInfo = $newUser->errorInfo();
+   
+    echo "L'inscription a échouée : ".$errorInfo[2];
+                        } else
+                        {
+                            echo "Votre inscription est un succès : " . $pseudo."<br>";
+                            echo " <a href='../index.php'>Connectez-vous.</a><br>";
+                        
+}
 
 ?>
