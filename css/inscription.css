@@ -1,8 +1,19 @@
+hmtl {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  scroll-behavior: smooth; 
+  
+}
+
 body {
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .box{
@@ -29,6 +40,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   object-fit: cover;
+  position: relative;
+  top: -80px;
 }
 
 .button {
@@ -42,10 +55,3 @@ body {
   background-color: #DB005B;
 } 
 
-/* .input:active {
-  border-color: #DB005B;
-} */
-
-/* .title {
-
-} */
