@@ -11,11 +11,15 @@
 <body>
     <main>
         <header>
-            <p>Logout</p>
+            <ul>
+                <li>Hello User</li>
+                <li>Logout </li>
+            </ul>
+
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
-                    <h3>Blurry Pictures</h3>
+                    <img src="./img/logo.png" alt="" srcset="">
                     <p>Pseudo</p>
                     <p>Home</p>
                     <p>Config</p>
