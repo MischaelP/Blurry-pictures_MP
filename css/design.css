@@ -1,6 +1,17 @@
+hmtl {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scroll-behavior: smooth; 
+  }
+
+
 .wrapper {
     padding: 1em;
-    width: auto;
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-areas: 
     "lat_menu head_post head_post"
@@ -9,6 +20,9 @@
     "lat_menu footer footer";  
     grid-template-columns: 0.5fr 1fr 1fr; 
     grid-template-rows: auto auto auto auto;
+    border: solid white;
+    border-radius: 2em;
+    box-shadow: 0px 4px 15px 5px rgba(94,94,94,0.84);
 }
 
 
@@ -22,8 +36,12 @@ header ul li {
     margin-right: 1em;
 }
 body{
-    padding: 0,5em;
-    background-color: #ECB5F7;
+    /* padding: 0,5em; */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
 }
 .create_post {
     display: flex;
@@ -34,7 +52,7 @@ body{
 }
 .lat_menu {
     grid-area: lat_menu;
-    border: 1px black solid;
+    border: 1px rgb(248, 244, 244) solid;
     background-color: white;
     padding-left: 4em;
     padding-top: 1em;
@@ -43,8 +61,8 @@ body{
 
 .head_post{
     grid-area: head_post;
-    border: 1px black solid;
-    padding-left:2em;
+    border-left: 1px rgb(39, 38, 38) solid;
+    /* padding-left:2em; */
     background-color:  #f5f1ec;
  
 }
@@ -74,4 +92,9 @@ body{
 }
 .post img{
     border-radius: 20px;
+}
+
+#logo {
+    position: relative;
+    left: -30px;
 }

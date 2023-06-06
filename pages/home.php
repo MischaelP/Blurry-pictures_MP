@@ -19,12 +19,12 @@
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
-                    <img src="../img/logo.png" alt="" srcset="">
+                    <img src="../img/logo.png" alt="" srcset="" id="logo">
                     <p>Pseudo</p>
                     <p>Home</p>
                     <p>Config</p>
                 </div>
-                <div class="head_post">Zone de creation de post
+                <div class="head_post">
                     <div class="create_post">
                         <form>
                             <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-50 dark:border-gray-600">
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="feed">
-                    <p>Zone du feed</p>
+                    
                     <div class="post">
                         <h3> Jax Martin</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum reprehenderit laboriosam eligendi adipisci pariatur nemo.</p>
