@@ -1,35 +1,50 @@
 <?php 
 include "../bin/connexion.php";
+// include "../index.php";
 
-$pseudo = $_POST['pseudo'];
-$password = $_POST['password'];
-// $password = md5($password);
+session_start();
 
-echo "le pseudo avant la requette est =".$pseudo."<br>";
+$pseudo = htmlspecialchars($_POST['pseudo']);
+$password = htmlspecialchars($_POST['password']);
+$password = md5($password);
+
+// echo "le pseudo avant la requette est =".$pseudo."<br>";
 
 $checking = $pdo->prepare("SELECT * FROM `testusers` WHERE `pseudo` = ?");
 $checking->execute([$pseudo]);
 
-$answer = $checking->fetch(PDO::FETCH_ASSOC);
-
-echo "Le pseudo réponse = ".$answer['pseudo']."<br>";
-
-if($answer){
+foreach($checking as $answer){
+    $idUser = $answer['id'];
+    $nameUser = $answer['name'];
+    $firstNameUser = $answer['firstName'];
+    $emailUser = $answer['email'];
     $pseudoUser = $answer['pseudo'];
     $passwordUser = $answer['password'];
-    if ($pseudo==$pseudoUser && $password==$passwordUser){
+}
+$_SESSION["id"]=$idUser;
+$_SESSION["name"]=$nameUser;
+$_SESSION["firstName"]=$firstNameUser;
+$_SESSION["email"]=$emailUser;
+$_SESSION["password"]=$passwordUser;
+$_SESSION["pseudo"]=$pseudoUser;
+
+
+ if ($pseudo==$pseudoUser && $password==$passwordUser){
 
         header('Location: ../pages/home.php');
+        exit();
 
     }else{
 
-    
+        
     echo "<script>console.log('erreur de mdp')</script>";
-    echo "Erreur de mot de passe <br>";
-    echo "<button><a href='../index.php'>Connexion</a></button>";
-    // header('Location: ../index.php');
+    $_SESSION["erreur"]=true;
+    // echo "Erreur de mot de passe <br>";
+    // echo "<button><a href='../index.php'>Connexion</a></button>";
+    header('Location: ../index.php');
 
-}}
+}
+
 
 
 

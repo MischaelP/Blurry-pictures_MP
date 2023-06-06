@@ -1,3 +1,9 @@
+<?php 
+include "../bin/connexion.php";
+session_start();
+// echo $_SESSION["name"];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,23 +17,27 @@
 <body>
     <main>
         <header>
+
             <nav class="navBarre">
             <ul class="flex flex-col m-5">
-                <li><a href="#" class="">Hello 'User'</a></li>
+              <li><a><?php echo $_SESSION['pseudo'] ?> </a></li>
                 <br>
                 <li><a href="http://localhost/index.php">Log out</a></li>
+
             </ul>
             </nav>
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
                     <img src="../img/logo.png" alt="" srcset="" id="logo">
+
                     <div id="pseudoLatBar"> <img src="../img/id-card.png">
-                    <br><p>Pseudo</p></div>
+                    <br><p><?php echo $_SESSION['pseudo'] ?></p></div>
                     <div id="homeLatBar"><img src="../img/home.png">
                     <br><p>Home</p> </div>
                     <div id="settingsLatBar"><img src="../img/settings.png">
                     <br><p>Settings</p> </div>
+
 
                 </div>
                 <div class="head_post">
