@@ -18,9 +18,9 @@
         Mot de passe <input type="password" name="password" id="password" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="xxxxxxxx"><br>
         <!-- <button onclick="window.location.href='./bin/login.php';" class="btn rounded-full border-solid border-2 border-transparent bg-slate-300 m-2">Connexion</button> -->
         <button type="submit" value="connexion" class="btn rounded-full border-solid border-2 border-transparent bg-slate-300 m-2">Connexion</button>
-      </form>
-    <button onclick="window.location.href='./pages/inscription.php';" class="btn  rounded-full border-solid border-2 border-transparent bg-slate-300 m-2">Créer un compte</button>
-
+      
+        <a onclick="window.location.href='./pages/inscription.php';" class="btn  rounded-full border-solid border-2 border-transparent bg-slate-300 m-2">Créer un compte</a>
+    </form>
       </div>
    </div>
 
