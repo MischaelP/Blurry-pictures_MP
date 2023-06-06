@@ -1,3 +1,9 @@
+<?php 
+include "../bin/connexion.php";
+session_start();
+// echo $_SESSION["name"];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +18,8 @@
     <main>
         <header>
             <ul>
-                <li>Hello User</li>
+            <!-- <li>Hello User</li> -->
+            <li><?php echo $_SESSION['pseudo'] ?></li>
                 <li>Logout </li>
             </ul>
 
@@ -20,7 +27,7 @@
             <div class="wrapper">
                 <div class="lat_menu">
                     <img src="../img/logo.png" alt="" srcset="" id="logo">
-                    <p>Pseudo</p>
+                    <p><?php echo $_SESSION['pseudo'] ?></p>
                     <p>Home</p>
                     <p>Config</p>
                 </div>
