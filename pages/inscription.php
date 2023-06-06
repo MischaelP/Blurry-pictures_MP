@@ -15,7 +15,7 @@
        <div class="box"> 
         
             <div class="formulaire">
-            <img id="logo" src="..\img\logo.png" alt="logo">
+            <img id="logo" src="..\img\logo.png" alt="logo" class="text-gray-500 flex flex-col m-5">
         <form action="../bin/verif.php" method="POST" class="form text-gray-500 flex flex-col m-5">
 
             Prénom <input type="text" name="firstName" id="firstName" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="firstname">
@@ -23,7 +23,7 @@
             Email <input type="email" name="email" id="email" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="blabla@gmail.com">
             Pseudo  <input type="text" name="pseudo" id="pseudo" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="pseudo">
             Mot de passe <input type="password" name="password" id="input password" class="border-solid border-2 border-stone-400 rounded pl-2" placeholder="xxxxxxxxx">
-           <button type="submit" value="Création" class="button rounded-full border-solid border-2 border-transparent bg-slate-300 m-2 rounded"> Création </button>
+           <button type="submit" value="Création" class="button border-solid border-2 border-transparent bg-slate-300 m-2 "> Création </button>
 
         </form>
             </div>

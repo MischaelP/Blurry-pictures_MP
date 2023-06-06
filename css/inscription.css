@@ -54,6 +54,7 @@ body {
   object-fit: cover;
   position: relative;
   top: -80px;
+  
 }
 
 .button {
@@ -61,6 +62,10 @@ body {
   bottom: -30px;
   font-size: 1rem;
   letter-spacing: .15rem;
+  position: relative;
+  padding: 0.5em;
+  border-radius: 2em;
+  
 }
 
 .button:hover {

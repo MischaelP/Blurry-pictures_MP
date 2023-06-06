@@ -12,24 +12,33 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/design.css">
-    <title>Blurry Pictures : Home</title>
+    <title>Home Page</title>
 </head>
 <body>
     <main>
         <header>
-            <ul>
-            <!-- <li>Hello User</li> -->
-            <li><?php echo $_SESSION['pseudo'] ?></li>
-                <li>Logout </li>
-            </ul>
 
+            <nav class="navBarre">
+            <ul class="flex flex-col m-5">
+              <li><a><?php echo $_SESSION['pseudo'] ?> </a></li>
+                <br>
+                <li><a href="http://localhost/index.php">Log out</a></li>
+
+            </ul>
+            </nav>
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
                     <img src="../img/logo.png" alt="" srcset="" id="logo">
-                    <p><?php echo $_SESSION['pseudo'] ?></p>
-                    <p>Home</p>
-                    <p>Config</p>
+
+                    <div id="pseudoLatBar"> <img src="../img/id-card.png">
+                    <br><p><?php echo $_SESSION['pseudo'] ?></p></div>
+                    <div id="homeLatBar"><img src="../img/home.png">
+                    <br><p>Home</p> </div>
+                    <div id="settingsLatBar"><img src="../img/settings.png">
+                    <br><p>Settings</p> </div>
+
+
                 </div>
                 <div class="head_post">
                     <div class="create_post">
@@ -85,7 +94,7 @@ session_start();
                         <p>Affichage date</p>
                     </div>
                 </div>
-                <div class="footer">Footer Bas de page</div>
+                <div class="footer">Footer</div>
             </div>
 
     </main>
