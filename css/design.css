@@ -32,8 +32,8 @@ hmtl {
 
 header ul {
     display: flex;
-    align-items: flex-end;
-    padding-left: 1em;
+    flex-direction: column;
+    /* padding-left: em; */
 }
 
 header ul li {

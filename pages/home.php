@@ -12,8 +12,9 @@
     <main>
         <header>
             <nav class="navBarre">
-            <ul>
+            <ul class="flex flex-col m-5">
                 <li><a href="#" class="">Hello 'User'</a></li>
+                <br>
                 <li><a href="http://localhost/index.php">Log out</a></li>
             </ul>
             </nav>
@@ -83,7 +84,7 @@
                         <p>Affichage date</p>
                     </div>
                 </div>
-                <div class="footer"></div>
+                <div class="footer">Footer</div>
             </div>
 
     </main>
