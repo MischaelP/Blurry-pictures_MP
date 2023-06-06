@@ -1,5 +1,6 @@
 <?php 
 include "../bin/connexion.php";
+include "../bin/endsession.php";
 include "../index.php";
 
 session_start();
@@ -37,11 +38,14 @@ $_SESSION["pseudo"]=$pseudoUser;
 
     
     echo "<script>console.log('erreur de mdp')</script>";
+    //redirection vers login.php
+    $_SESSION['connexion'] = false;
     // echo "Erreur de mot de passe <br>";
     // echo "<button><a href='../index.php'>Connexion</a></button>";
-    // header('Location: ../index.php');
+    header('Location: ../index.php');
 
 }
+
 
 
 

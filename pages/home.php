@@ -1,7 +1,11 @@
 <?php 
 include "../bin/connexion.php";
+include "../bin/endsession.php";
 session_start();
 // echo $_SESSION["name"];
+if(isset($_GET['logout'])){
+    finConnexion();
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +24,7 @@ session_start();
             <ul>
             <!-- <li>Hello User</li> -->
             <li><?php echo $_SESSION['pseudo'] ?></li>
-                <li>Logout </li>
+                <li><a href="?logout=1">Logout</li>
             </ul>
 
         </header>
