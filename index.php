@@ -1,3 +1,7 @@
+<?php 
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,6 +17,12 @@
     <div class="box">
       <div class="form text-gray-500 flex flex-col m-5">
       <img id="logo" src=".\img\logo.png" alt="logo">
+      <?php 
+      if($_SESSION["erreur"]==true){
+        echo "<p class='text-red-600'> erreur de mot de passe</p>";
+       session_destroy();
+      }
+      ?>
       <form action="./bin/login.php" method="POST">
         Pseudo <input type="text" name="pseudo" id="pseudo" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="username"> <br>
         Mot de passe <input type="password" name="password" id="password" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="xxxxxxxx"><br>
