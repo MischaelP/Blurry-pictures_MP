@@ -1,7 +1,11 @@
 <?php 
+
 include "../bin/connexion.php";
 session_start();
-// echo $_SESSION["name"];
+if ($_SESSION['logged_in']!=true){
+    header('Location: ../index.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +37,7 @@ session_start();
 
                     <ul class="flex flex-col m-5">
                     <br>
-                <div id="logout"><img src="../img/exit.png"><li><a href="./index.php">Log out</a></li></div>
+                <div id="logout"><img src="../img/exit.png"><li><a href="../index.php">Log out</a></li></div>
                      </ul>
 
                 </div>

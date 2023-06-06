@@ -30,6 +30,7 @@ $_SESSION['pseudo']=$pseudoUser;
 
  if ($pseudo==$pseudoUser && $password==$passwordUser){
 
+        $_SESSION['logged_in']=true;
         header('Location: ../pages/home.php');
         exit();
 
