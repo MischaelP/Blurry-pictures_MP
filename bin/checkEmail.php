@@ -8,11 +8,12 @@
     $checking = $pdo->prepare("SELECT `id`,`email` FROM `testusers` WHERE `email` = ?");
     $checking->execute([$email]);
 
-    $row = $checking->fetch(PDO::FETCH_ASSOC);
+    $answer = $checking->fetch(PDO::FETCH_ASSOC);
     
-    if($row){
-        $mail = $row['email'];
+    if($answer){
+        $mail = $answer['email'];
         if ($email==$mail){
+            
             echo "utilisateur existant";
             echo " <a href='../index.php'>Connectez-vous.</a>";
         }
