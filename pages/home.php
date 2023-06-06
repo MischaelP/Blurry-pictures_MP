@@ -18,7 +18,7 @@ session_start();
     <main>
         <header>
 
-            
+
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
@@ -29,7 +29,7 @@ session_start();
                     <div id="homeLatBar"><img src="../img/home.png">
                     <br><p>Home</p></div>
                     <div id="settingsLatBar"><img src="../img/settings.png">
-                    <br><p>Settings</p> </div>
+                    <br><p><a href="./profil.php">Settings</a></p> </div>
 
                     <ul class="flex flex-col m-5">
                     <br>
