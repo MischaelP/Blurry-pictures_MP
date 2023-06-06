@@ -7,11 +7,7 @@ hmtl {
     scroll-behavior: smooth;  */
   }
 
-.navBarre {
-    display: flex;
-    flex-direction: column;
-      
-}
+
 
 .wrapper {
   
@@ -27,6 +23,9 @@ hmtl {
     max-width: 80%;
     position: relative;
     left: 10%;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
 }
 
 
@@ -44,8 +43,8 @@ body{
     /* width: 100vw;
     height: 100vh; */
     /* overflow: hidden; */
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
+    background-color: rgb(148,187,233,1);
+    background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
 }
 .create_post {
     display: flex;
@@ -139,4 +138,23 @@ body{
 #settingsLatBar>p{
     position: relative;
     left: 50px;
+}
+
+#logout>img{
+    width: 30px;
+    position: relative;
+    top: 8px;
+    left: -20px;
+}
+
+#logout>li{
+    width: 30px;
+    position: relative;
+    top: -30px;
+    left: 30px;
+}
+
+.footer>a>img{
+    width: 20px;
+    display: inline-block;
 }

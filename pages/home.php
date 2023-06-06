@@ -18,14 +18,7 @@ session_start();
     <main>
         <header>
 
-            <nav class="navBarre">
-            <ul class="flex flex-col m-5">
-              <li><a><?php echo $_SESSION['pseudo'] ?> </a></li>
-                <br>
-                <li><a href="http://localhost/index.php">Log out</a></li>
-
-            </ul>
-            </nav>
+            
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
@@ -34,10 +27,14 @@ session_start();
                     <div id="pseudoLatBar"> <img src="../img/id-card.png">
                     <br><p><?php echo $_SESSION['pseudo'] ?></p></div>
                     <div id="homeLatBar"><img src="../img/home.png">
-                    <br><p>Home</p> </div>
+                    <br><p>Home</p></div>
                     <div id="settingsLatBar"><img src="../img/settings.png">
                     <br><p>Settings</p> </div>
 
+                    <ul class="flex flex-col m-5">
+                    <br>
+                <div id="logout"><img src="../img/exit.png"><li><a href="./index.php">Log out</a></li></div>
+                     </ul>
 
                 </div>
                 <div class="head_post">
@@ -50,7 +47,7 @@ session_start();
                                 </div>
                                 <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
                                     <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-                                        Post comment
+                                        Post content
                                     </button>
                                     <div class="flex pl-0 space-x-1 sm:pl-2">
                                         <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
@@ -94,7 +91,12 @@ session_start();
                         <p>Affichage date</p>
                     </div>
                 </div>
-                <div class="footer">Footer</div>
+                <div class="footer">More about us: <br>
+                    <a href="https://www.linkedin.com/in/pierre-jezequel-91055a246/">Pierre<img src="../img/linkedin.png"></a> <br>
+                    <a href="https://www.linkedin.com/in/mischael-phemius/">Mischael<img src="../img/linkedin.png"></a> <br>
+                    <a href="https://www.linkedin.com/in/laure-favre-344383238/">Laure<img src="../img/linkedin.png"></a>
+
+                </div>
             </div>
 
     </main>
