@@ -22,7 +22,7 @@ session_start();
             <ul class="flex flex-col m-5">
               <li><a><?php echo $_SESSION['pseudo'] ?> </a></li>
                 <br>
-                <li><a href="http://localhost/index.php">Log out</a></li>
+                <li><a href="../index.php">Log out</a></li>
 
             </ul>
             </nav>
@@ -36,7 +36,7 @@ session_start();
                     <div id="homeLatBar"><img src="../img/home.png">
                     <br><p>Home</p> </div>
                     <div id="settingsLatBar"><img src="../img/settings.png">
-                    <br><p>Settings</p> </div>
+                    <br><p><a href="./profil.php">Settings</a></p> </div>
 
 
                 </div>

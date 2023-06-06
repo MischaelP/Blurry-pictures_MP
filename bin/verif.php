@@ -1,7 +1,6 @@
 <?php 
 
-if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'])&& !empty($_POST['pseudo'])/*&& !empty($_POST['password'])*/
-) 
+if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'])&& !empty($_POST['pseudo'])&& !empty($_POST['password'])) 
     {
         echo 'Ok <br>';
         echo 'formulaire soumis<br>';
@@ -11,6 +10,7 @@ if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'
         $email= filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
         $pseudo= htmlspecialchars($_POST['pseudo']);
         $password= htmlspecialchars($_POST['password']);
+        
         // empeche le code de prendre en compte si la psn met des balises html dans les inputs, les met en texte
         if (preg_match('/^[0-9a-zA-Z]{8,}$/', $_POST['password'])) {
             echo 'mdp ok<br>';
@@ -25,14 +25,11 @@ if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'
         $verifPseudo = preg_match('/^[0-9a-zA-Z]{2,}$/', $pseudo) ? true : false;
         $verifPassword = preg_match('/^[0-9a-zA-Z]{8,}$/', $password) ? true : false;
 
-        if (($verifFirstName && $verifName && $verifPseudo /*&& $verifPassword*/)==true){
+        if (($verifFirstName && $verifName && $verifPseudo && $verifPassword)==true){
             echo "Tout est Ok <br>";
            
            include "./checkEmail.php";
-        //    include "../bin/checkEmail.php";
-            
-
-            // include "../bin/create_new_user.php";
+       
         }else {
             echo "revoir le formulaire";
         }
