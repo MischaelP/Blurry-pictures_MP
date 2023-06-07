@@ -22,7 +22,7 @@ $password= !empty($updateUser['password'])? $_SESSION['password']=md5($updateUse
 
 $idUser= $_SESSION['id'];
 
-$update = $pdo->prepare("UPDATE `testusers` SET `name`= :name,`firstName`= :firstName,`email`= :email,`password`= :password,`pseudo`= :pseudo WHERE `id`=$idUser");
+$update = $pdo->prepare("UPDATE `users` SET `name`= :name,`firstName`= :firstName,`email`= :email,`password`= :password,`pseudo`= :pseudo WHERE `id`=$idUser");
 $update->bindValue(':name', $name);
 $update->bindValue(':firstName', $firstName);
 $update->bindValue(':email', $email);
