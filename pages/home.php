@@ -1,11 +1,14 @@
 <?php 
+
 include "../bin/connexion.php";
 include "../bin/endsession.php";
 include "../bin/addpost.php";
 session_start();
-// echo $_SESSION["name"];
-// if(isset($_GET['logout'])){
-//     finConnexion();
+
+if ($_SESSION['logged_in']!=true){
+    header('Location: ../index.php');
+}
+
 
 ?>
 
@@ -17,24 +20,30 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/design.css">
-    <title>Blurry Pictures : Home</title>
+    <title>Home Page</title>
 </head>
 <body>
     <main>
         <header>
-            <ul>
-            <!-- <li>Hello User</li> -->
-            <li><?php echo $_SESSION['pseudo'] ?></li>
-                <li>Logout</li>
-            </ul>
+
 
         </header>
             <div class="wrapper">
                 <div class="lat_menu">
                     <img src="../img/logo.png" alt="" srcset="" id="logo">
-                    <p><?php echo $_SESSION['pseudo'] ?></p>
-                    <p>Home</p>
-                    <p>Config</p>
+
+                    <div id="pseudoLatBar"> <img src="../img/id-card.png">
+                    <br><p><?php echo $_SESSION['pseudo'] ?></p></div>
+                    <div id="homeLatBar"><img src="../img/home.png">
+                    <br><p>Home</p></div>
+                    <div id="settingsLatBar"><img src="../img/settings.png">
+                    <br><p><a href="./profil.php">Settings</a></p> </div>
+
+                    <ul class="flex flex-col m-5">
+                    <br>
+                <div id="logout"><img src="../img/exit.png"><li><a href="../index.php">Log out</a><?php session_destroy()?></li></div>
+                     </ul>
+
                 </div>
                 <div class="head_post">
                     <div class="create_post">
@@ -46,7 +55,9 @@ session_start();
                                 </div>
                                 <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
                                     <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-                                        Post article
+
+                                        Post content
+
                                     </button>
                                     <div class="flex pl-0 space-x-1 sm:pl-2">
                                         <!-- <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
@@ -91,7 +102,12 @@ session_start();
                         <p>Affichage date</p>
                     </div>
                 </div>
-                <div class="footer">Footer Bas de page</div>
+                <div class="footer">More about us: <br>
+                    <a href="https://www.linkedin.com/in/pierre-jezequel-91055a246/">Pierre<img src="../img/linkedin.png"></a> <br>
+                    <a href="https://www.linkedin.com/in/mischael-phemius/">Mischael<img src="../img/linkedin.png"></a> <br>
+                    <a href="https://www.linkedin.com/in/laure-favre-344383238/">Laure<img src="../img/linkedin.png"></a>
+
+                </div>
             </div>
 
     </main>

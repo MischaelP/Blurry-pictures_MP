@@ -2,12 +2,22 @@
 
 include "../bin/connexion.php";
 
+session_start();
+
 $prenom=$_POST['firstName'];
 $nom=$_POST['name'];
 $email=$_POST['email'];
 $pseudo=$_POST['pseudo'];
 $mdp=$_POST['password'];
 $mdp=md5($mdp);
+
+
+$_SESSION['name']=$nom;
+$_SESSION['firstName']=$prenom;
+$_SESSION['email']=$email;
+$_SESSION['password']=$mdp;
+$_SESSION['pseudo']=$pseudo;
+$_SESSION['logged_in']=true;
 
 $data = [$nom,$prenom,$email,$mdp,$pseudo];
 
@@ -19,10 +29,10 @@ if(! $ok){
     $errorInfo = $newUser->errorInfo();
    
     echo "L'inscription a échouée : ".$errorInfo[2];
-                        } else
-                        {
-                            echo "Votre inscription est un succès : " . $pseudo."<br>";
-                            echo " <a href='../index.php'>Connectez-vous.</a><br>";
+}else{
+    echo "Votre inscription est un succès : " . $pseudo."<br>";
+    echo " <a href='../index.php'>Connectez-vous.</a><br>";
+    header('Location: ../pages/home.php');
                         
 }
 

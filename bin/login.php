@@ -1,7 +1,7 @@
 <?php 
 include "../bin/connexion.php";
-include "../bin/endsession.php";
-include "../index.php";
+
+
 
 session_start();
 
@@ -22,28 +22,41 @@ foreach($checking as $answer){
     $pseudoUser = $answer['pseudo'];
     $passwordUser = $answer['password'];
 }
-$_SESSION["id"]=$idUser;
-$_SESSION["name"]=$nameUser;
-$_SESSION["firstName"]=$firstNameUser;
-$_SESSION["email"]=$emailUser;
-$_SESSION["password"]=$passwordUser;
-$_SESSION["pseudo"]=$pseudoUser;
+$_SESSION['id']=$idUser;
+$_SESSION['name']=$nameUser;
+$_SESSION['firstName']=$firstNameUser;
+$_SESSION['email']=$emailUser;
+$_SESSION['password']=$passwordUser;
+$_SESSION['pseudo']=$pseudoUser;
 
- if ($pseudo==$pseudoUser && $password==$passwordUser){
 
+ /*if ($pseudo==$pseudoUser && $password==$passwordUser){
+
+        $_SESSION['logged_in']=true;
         header('Location: ../pages/home.php');
         exit();
 
     }else{
 
-    
+        
     echo "<script>console.log('erreur de mdp')</script>";
-    //redirection vers login.php
-    $_SESSION['connexion'] = false;
-    // echo "Erreur de mot de passe <br>";
-    // echo "<button><a href='../index.php'>Connexion</a></button>";
-    header('Location: ../index.php');
 
+
+if($pseudo==$pseudoUser){
+    if($password==$passwordUser){
+        $_SESSION['logged_in']=true;
+        header('Location: ../pages/home.php');
+        exit();
+    }else{
+        echo "<script>console.log('erreur de pseudo')</script>";
+        $_SESSION['erreurPassword']=true;
+        header('Location: ../index.php');
+    }
+   
+}else{
+    echo "<script>console.log('erreur de pseudo')</script>";
+    $_SESSION['erreurPseudo']=true;
+    header('Location: ../index.php');
 }
 
 
