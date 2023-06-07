@@ -15,6 +15,7 @@ $checking = $pdo->prepare("SELECT * FROM `users` WHERE `pseudo` = ?");
 $checking->execute([$pseudo]);
 
 foreach($checking as $answer){
+    
     $idUser = $answer['id'];
     $nameUser = $answer['name'];
     $firstNameUser = $answer['firstName'];
@@ -29,17 +30,7 @@ $_SESSION['email']=$emailUser;
 $_SESSION['password']=$passwordUser;
 $_SESSION['pseudo']=$pseudoUser;
 
-
- /*if ($pseudo==$pseudoUser && $password==$passwordUser){
-
-        $_SESSION['logged_in']=true;
-        header('Location: ../pages/home.php');
-        exit();
-
-    }else{
-
-        
-    echo "<script>console.log('erreur de mdp')</script>";
+// echo var_dump($_SESSION);
 
 
 if($pseudo==$pseudoUser){
@@ -58,6 +49,7 @@ if($pseudo==$pseudoUser){
     $_SESSION['erreurPseudo']=true;
     header('Location: ../index.php');
 }
+
 
 
 

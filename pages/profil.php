@@ -1,9 +1,11 @@
 <?php 
 include "../bin/connexion.php";
 session_start();
+// echo var_dump($_SESSION);
+
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
