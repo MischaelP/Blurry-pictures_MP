@@ -28,7 +28,7 @@ $_SESSION['password']=$passwordUser;
 $_SESSION['pseudo']=$pseudoUser;
 
 
- if ($pseudo==$pseudoUser && $password==$passwordUser){
+ /*if ($pseudo==$pseudoUser && $password==$passwordUser){
 
         $_SESSION['logged_in']=true;
         header('Location: ../pages/home.php');
@@ -43,6 +43,23 @@ $_SESSION['pseudo']=$pseudoUser;
     // echo "<button><a href='../index.php'>Connexion</a></button>";
     header('Location: ../index.php');
 
+}*/
+
+if($pseudo==$pseudoUser){
+    if($password==$passwordUser){
+        $_SESSION['logged_in']=true;
+        header('Location: ../pages/home.php');
+        exit();
+    }else{
+        echo "<script>console.log('erreur de pseudo')</script>";
+        $_SESSION['erreurPassword']=true;
+        header('Location: ../index.php');
+    }
+   
+}else{
+    echo "<script>console.log('erreur de pseudo')</script>";
+    $_SESSION['erreurPseudo']=true;
+    header('Location: ../index.php');
 }
 
 

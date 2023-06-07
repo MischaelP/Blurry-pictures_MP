@@ -19,8 +19,11 @@ session_start()
       <img id="logo" src=".\img\logo.png" alt="logo">
 
              <?php 
-      if($_SESSION["erreur"]==true){
+      if($_SESSION['erreurPassword']==true){
         echo "<p class='text-red-600'> erreur de mot de passe</p>";
+       session_destroy();
+      }else if ($_SESSION['erreurPseudo']==true){
+        echo "<p class='text-red-600'> erreur de pseudo ou créer un compte</p>";
        session_destroy();
       }
       ?>

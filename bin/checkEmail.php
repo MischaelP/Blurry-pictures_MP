@@ -19,7 +19,7 @@
         }
 
     }else{
-        echo "nouvel utilisateur";
+        echo "nouvel utilisateur <br>";
         include "../bin/create_new_user.php";
 
     }

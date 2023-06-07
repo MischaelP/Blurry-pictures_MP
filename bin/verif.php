@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'])&& !empty($_POST['pseudo'])&& !empty($_POST['password'])) 
     {
         echo 'Ok <br>';
@@ -22,7 +22,7 @@ if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'
 
         $verifFirstName = preg_match('/^[a-zA-Z]{2,}$/', $firstName) ? true : false;
         $verifName = preg_match('/^[a-zA-Z\s]{2,}$/', $name) ? true : false;
-        $verifPseudo = preg_match('/^[0-9a-zA-Z]{2,}$/', $pseudo) ? true : false;
+        $verifPseudo = preg_match('/^[0-9a-zA-Z\s]{2,}$/', $pseudo) ? true : false;
         $verifPassword = preg_match('/^[0-9a-zA-Z]{8,}$/', $password) ? true : false;
 
         if (($verifFirstName && $verifName && $verifPseudo && $verifPassword)==true){
@@ -34,7 +34,10 @@ if (!empty($_POST['firstName'])&& !empty($_POST['name'])&& !empty($_POST['email'
             echo "revoir le formulaire";
         }
     }else{
-        echo "<a href='../pages/inscription.php'>Remplir tous les champs</a>";
+        $_SESSION['champVide']=true;
+        header('Location: ../pages/inscription.php');
+
+        // echo "<a href='../pages/inscription.php'>Remplir tous les champs</a>";
         
     }
 

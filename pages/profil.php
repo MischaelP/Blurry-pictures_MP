@@ -23,12 +23,12 @@ session_start();
             <img id="logo" src="..\img\logo.png" alt="logo" class="text-gray-500 flex flex-col m-5">
         <form action="../bin/updateUser.php" method="POST" class="form text-gray-500 flex flex-col m-5">
 
-            Prénom : <input type="text" name="firstName" id="firstName" class="input border-solid border-2 border-stone-400 rounded pl-2 placeholder-orange-600" placeholder="<?php echo $_SESSION["firstName"]?>">
-            Nom :<input type="text" name="name" id="name" class="input border-solid border-2 border-stone-400 rounded pl-2 placeholder-orange-600" placeholder="<?php echo $_SESSION["name"]?>">
-            Email :<input type="email" name="email" id="email" class="input border-solid border-2 border-stone-400 rounded pl-2 placeholder-orange-600" placeholder="<?php echo $_SESSION["email"]?>">
-            Pseudo :<input type="text" name="pseudo" id="pseudo" class="input border-solid border-2 border-stone-400 rounded pl-2 placeholder-orange-600" placeholder="<?php echo $_SESSION["pseudo"]?>">
-            Mot de passe :<input type="password" name="password" id="input password" class="border-solid border-2 border-stone-400 rounded pl-2 placeholder-orange-600" placeholder="xxxxxxxxx">
-           <button type="submit" value="Mise à jour" class="button border-solid border-2 border-transparent bg-slate-300 m-2 placeholder-orange-600"> Mise à jour </button>
+            Prénom : <input type="text" name="firstName" id="firstName" class="input border-solid border-2 border-stone-400 rounded pl-2 text-orange-600" placeholder="<?php echo $_SESSION["firstName"]?>">
+            Nom :<input type="text" name="name" id="name" class="input border-solid border-2 border-stone-400 rounded pl-2 text-orange-600" placeholder="<?php echo $_SESSION["name"]?>">
+            Email :<input type="email" name="email" id="email" class="input border-solid border-2 border-stone-400 rounded pl-2 text-orange-600" placeholder="<?php echo $_SESSION["email"]?>">
+            Pseudo :<input type="text" name="pseudo" id="pseudo" class="input border-solid border-2 border-stone-400 rounded pl-2 text-orange-600" placeholder="<?php echo $_SESSION["pseudo"]?>">
+            Mot de passe :<input type="password" name="password" id="input password" class="border-solid border-2 border-stone-400 rounded pl-2 text-orange-600" placeholder="xxxxxxxxx">
+           <button type="submit" value="Mise à jour" class="button border-solid border-2 border-transparent bg-slate-300 m-2 text-orange-600"> Mise à jour </button>
 
         </form>
             </div>

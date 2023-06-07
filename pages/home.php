@@ -37,7 +37,7 @@ if ($_SESSION['logged_in']!=true){
 
                     <ul class="flex flex-col m-5">
                     <br>
-                <div id="logout"><img src="../img/exit.png"><li><a href="../index.php">Log out</a></li></div>
+                <div id="logout"><img src="../img/exit.png"><li><a href="../index.php">Log out</a><?php session_destroy()?></li></div>
                      </ul>
 
                 </div>
