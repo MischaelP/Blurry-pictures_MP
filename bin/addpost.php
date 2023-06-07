@@ -1,5 +1,5 @@
 <?php
-include "connexion.php";
+include "../bin/connexion.php";
 session_start();
 
 //récupération des infos du formulaire
@@ -29,7 +29,7 @@ if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){
                 echo '<img src=" '.$pathImg.'">';
                 
                
-                $data = [$id,$content,$pathImg];
+                $data = [$id,$content,$pathImg]; 
                 //Creation du post et vérification
                 $newpost = $pdo->prepare("INSERT INTO `posts`(`user_id`, `content`, `lien_img`) VALUES (?,?,?)");
                 try {
