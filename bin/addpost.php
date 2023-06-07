@@ -8,6 +8,7 @@ $post = htmlspecialchars($_POST['newPost']);
 $date = date("Y-m-d");
 $id = $_SESSION['id'];
 $pseudo = $_SESSION['pseudo'];
+$content = $_POST['newPost'];
 
 
 //vérification de l'image
@@ -26,6 +27,20 @@ if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){
                 echo '<p>Upload Succesfull</p>';
                 echo '<p>Nom chemin :</p>'.$pathImg;
                 echo '<img src=" '.$pathImg.'">';
+                
+               
+                $data = [$id,$content,$pathImg];
+                //Creation du post et vérification
+                $newpost = $pdo->prepare("INSERT INTO `posts`(`user_id`, `content`, `lien_img`) VALUES (?,?,?)");
+                try {
+                    $newpost->execute($data);
+                
+                    // Requête exécutée avec succès
+                    echo "It's online !";
+                } catch (PDOException $e) {
+                    // Erreur lors de l'exécution de la requête
+                    echo "Something bad happend, Harry " . $e->getMessage();
+                }
 
 
             }

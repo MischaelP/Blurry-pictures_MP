@@ -11,7 +11,7 @@ $password = md5($password);
 
 // echo "le pseudo avant la requette est =".$pseudo."<br>";
 
-$checking = $pdo->prepare("SELECT * FROM `testusers` WHERE `pseudo` = ?");
+$checking = $pdo->prepare("SELECT * FROM `users` WHERE `pseudo` = ?");
 $checking->execute([$pseudo]);
 
 foreach($checking as $answer){
