@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +20,13 @@
         
             <div class="formulaire">
             <img id="logo" src="..\img\logo.png" alt="logo" class="text-gray-500 flex flex-col m-5">
+           
+           <?php 
+                if($_SESSION['champVide']==true){
+                    echo "<p class='text-red-600'> Remplir tous les champs </p>";
+                session_destroy();
+                }
+            ?>
         <form action="../bin/verif.php" method="POST" class="form text-gray-500 flex flex-col m-5">
 
             Prénom <input type="text" name="firstName" id="firstName" class="input border-solid border-2 border-stone-400 rounded pl-2" placeholder="firstname">
