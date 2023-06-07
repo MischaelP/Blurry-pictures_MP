@@ -1,7 +1,6 @@
 <?php 
 
 include "../bin/connexion.php";
-include "../bin/endsession.php";
 include "../bin/addpost.php";
 session_start();
 
@@ -41,7 +40,7 @@ if ($_SESSION['logged_in']!=true){
 
                     <ul class="flex flex-col m-5">
                     <br>
-                <div id="logout"><img src="../img/exit.png"><li><a href="../index.php">Log out</a><?php session_destroy()?></li></div>
+                <div id="logout"><img src="../img/exit.png"><li><a href="../index.php">Log out</a></li></div>
                      </ul>
 
                 </div>
@@ -81,12 +80,38 @@ if ($_SESSION['logged_in']!=true){
                 </div>
                 <div class="feed">
                     
-                    <div class="post">
-                        <h3> Jax Martin</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum reprehenderit laboriosam eligendi adipisci pariatur nemo.</p>
-                        <img src="../img/rue_floue.jpeg" alt="rue floue" srcset="">
-                        <p>Affichage date</p>
-                    </div>
+                  <?php
+                    //on récupère toutes les infos des articles
+                        $postQuery = $pdo->prepare("SELECT user_id, content, lien_img FROM posts ORDER BY id DESC LIMIT 15");
+                        $postQuery->execute();
+
+                        //utilisation de fetch PDO afin d'avoir les résultat ligne par ligne. Ensuite on nomme les lignes.
+                        $posts = $postQuery->fetchAll(PDO::FETCH_ASSOC);
+
+                        //faire une boucle foreach pour afficher tout les résultats
+                        foreach ($posts as $row) {
+                            //On renomme chaque post  
+                            $userId = $row['user_id'];
+                            $content = $row['content'];
+                            $imagePath = $row['lien_img'];
+                        
+                            // Requête pour récupérer les informations du createur du post
+                            $userQuery = $pdo->prepare("SELECT pseudo FROM users WHERE id = ?");
+                            $userQuery->execute([$userId]);
+                            $user = $userQuery->fetch(PDO::FETCH_ASSOC);
+                            $pseudo = $user['pseudo'];
+                        
+                            // Affichage du post avec l'image
+                            echo '<div class="post">';
+                            echo '<h3>' . $pseudo . '</h3>';
+                            echo '<p>' . $content . '</p>';
+                            echo '<img src="' . $imagePath . '" alt="'.$content.'" srcset="">';
+                            echo '</div>';
+                        }
+
+                        
+
+                  ?>
                    
                     <div class="post">
                         <h3> Jax Martin</h3>

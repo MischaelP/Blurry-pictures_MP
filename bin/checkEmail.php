@@ -5,7 +5,7 @@
 
     
     $email=$_POST['email'];
-    $checking = $pdo->prepare("SELECT `id`,`email` FROM `testusers` WHERE `email` = ?");
+    $checking = $pdo->prepare("SELECT `id`,`email` FROM `users` WHERE `email` = ?");
     $checking->execute([$email]);
 
     $answer = $checking->fetch(PDO::FETCH_ASSOC);

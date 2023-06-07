@@ -40,7 +40,7 @@ $_SESSION['pseudo']=$pseudoUser;
 
         
     echo "<script>console.log('erreur de mdp')</script>";
-
+    */
 
 if($pseudo==$pseudoUser){
     if($password==$passwordUser){
