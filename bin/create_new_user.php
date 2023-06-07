@@ -17,6 +17,7 @@ $_SESSION['firstName']=$prenom;
 $_SESSION['email']=$email;
 $_SESSION['password']=$mdp;
 $_SESSION['pseudo']=$pseudo;
+$_SESSION['logged_in']=true;
 
 $data = [$nom,$prenom,$email,$mdp,$pseudo];
 
