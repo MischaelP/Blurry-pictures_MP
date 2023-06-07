@@ -1,6 +1,8 @@
 <?php 
 include "../bin/connexion.php";
 
+
+
 session_start();
 
 $pseudo = htmlspecialchars($_POST['pseudo']);
@@ -9,7 +11,7 @@ $password = md5($password);
 
 // echo "le pseudo avant la requette est =".$pseudo."<br>";
 
-$checking = $pdo->prepare("SELECT * FROM `testusers` WHERE `pseudo` = ?");
+$checking = $pdo->prepare("SELECT * FROM `users` WHERE `pseudo` = ?");
 $checking->execute([$pseudo]);
 
 foreach($checking as $answer){
@@ -38,12 +40,7 @@ $_SESSION['pseudo']=$pseudoUser;
 
         
     echo "<script>console.log('erreur de mdp')</script>";
-    $_SESSION['erreur']=true;
-    // echo "Erreur de mot de passe <br>";
-    // echo "<button><a href='../index.php'>Connexion</a></button>";
-    header('Location: ../index.php');
 
-}*/
 
 if($pseudo==$pseudoUser){
     if($password==$passwordUser){
@@ -61,6 +58,7 @@ if($pseudo==$pseudoUser){
     $_SESSION['erreurPseudo']=true;
     header('Location: ../index.php');
 }
+
 
 
 

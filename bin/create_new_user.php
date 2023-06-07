@@ -22,7 +22,7 @@ $_SESSION['logged_in']=true;
 $data = [$nom,$prenom,$email,$mdp,$pseudo];
 
 
-$newUser = $pdo->prepare("INSERT INTO `testusers`( `name`, `firstName`,`email`, `password`, `pseudo`) VALUES (?,?,?,?,?)");
+$newUser = $pdo->prepare("INSERT INTO `users`( `name`, `firstName`,`email`, `password`, `pseudo`) VALUES (?,?,?,?,?)");
 $ok = $newUser->execute($data);
 
 if(! $ok){
