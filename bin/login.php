@@ -30,7 +30,6 @@ $_SESSION['email']=$emailUser;
 $_SESSION['password']=$passwordUser;
 $_SESSION['pseudo']=$pseudoUser;
 
-// echo var_dump($_SESSION);
 
 
 if($pseudo==$pseudoUser){

@@ -5,11 +5,10 @@ session_start();
 //récupération des infos du formulaire
 $formatImage = array("jpg","jpeg","png","gif");
 $post = htmlspecialchars($_POST['newPost']);
-$date = date("Y-m-d");
 $id = $_SESSION['id'];
 $pseudo = $_SESSION['pseudo'];
 $content = $_POST['newPost'];
-
+echo $id, $pseudo;
 
 //vérification de l'image
 if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){
@@ -27,6 +26,7 @@ if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){
                 echo '<p>Upload Succesfull</p>';
                 echo '<p>Nom chemin :</p>'.$pathImg;
                 echo '<img src=" '.$pathImg.'">';
+               
                 
                
                 $data = [$id,$content,$pathImg]; 
@@ -34,9 +34,9 @@ if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){
                 $newpost = $pdo->prepare("INSERT INTO `posts`(`user_id`, `content`, `lien_img`) VALUES (?,?,?)");
                 try {
                     $newpost->execute($data);
+                    header('Location: ../pages/home.php');
                 
                     // Requête exécutée avec succès
-                    echo "It's online !";
                 } catch (PDOException $e) {
                     // Erreur lors de l'exécution de la requête
                     echo "Something bad happend, Harry " . $e->getMessage();
@@ -50,8 +50,8 @@ if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){
             echo '<script>alert("Fichier trop lourd");</script>';
     
         }
-
+        
 }
-// Insertion dans base de donnée
+
 
 ?>
