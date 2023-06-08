@@ -158,3 +158,12 @@ body{
     width: 20px;
     display: inline-block;
 }
+
+.profilPost{
+    display: inline-flex;
+    padding: 5px;
+}
+
+.profilPost img{
+    padding: 5px;
+}

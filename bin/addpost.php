@@ -8,7 +8,7 @@ $post = htmlspecialchars($_POST['newPost']);
 $id = $_SESSION['id'];
 $pseudo = $_SESSION['pseudo'];
 $content = $_POST['newPost'];
-echo $id, $pseudo;
+// echo $id, $pseudo;
 
 //vérification de l'image
 if (isset($_FILES['post_img']) && $_FILES['post_img']['error'] == 0){

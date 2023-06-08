@@ -103,7 +103,7 @@ if ($_SESSION['logged_in']!=true){
                         
                             // Affichage du post avec l'image
                             echo '<div class="post">';
-                            echo '<h3>' . $pseudo . '</h3>';
+                            echo '<div class="profilPost">'.'<img src="../img/profil.png" width=30px>'.'<h3>' . $pseudo ." a posté :". '</h3>'.'</div>';
                             echo '<p>' . $content . '</p>';
                             echo '<img src="' . $imagePath . '" alt="'.$content.'" srcset="">';
                             echo '</div>';
@@ -113,7 +113,7 @@ if ($_SESSION['logged_in']!=true){
 
                   ?>
                    
-                    <div class="post">
+                    <!-- <div class="post">
                         <h3> Jax Martin</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum reprehenderit laboriosam eligendi adipisci pariatur nemo.</p>
                         <img src="../img/rue_floue.jpeg" alt="rue floue" srcset="">
@@ -125,7 +125,7 @@ if ($_SESSION['logged_in']!=true){
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum reprehenderit laboriosam eligendi adipisci pariatur nemo.</p>
                         <img src="../img/rue_floue.jpeg" alt="rue floue" srcset="">
                         <p>Affichage date</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="footer">More about us: <br>
                     <a href="https://www.linkedin.com/in/pierre-jezequel-91055a246/">Pierre<img src="../img/linkedin.png"></a> <br>
