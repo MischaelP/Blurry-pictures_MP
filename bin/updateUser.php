@@ -2,6 +2,15 @@
 include "../bin/connexion.php";
 session_start();
 
+echo "<br> echo ".$_SESSION['id'];
+echo "<br> echo ".$_SESSION['firstName'];
+echo "<br> echo ".$_SESSION['name'];
+echo "<br> echo ".$_SESSION['email'];
+echo "<br> echo ".$_SESSION['pseudo'];
+echo "<br> echo ".$_SESSION['password'];
+
+
+
 $updateUser = [
     'firstName'=> htmlspecialchars($_POST['firstName']),
     'name'=> htmlspecialchars($_POST['name']),

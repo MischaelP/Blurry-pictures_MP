@@ -3,7 +3,7 @@
 include "../bin/connexion.php";
 include "../bin/addpost.php";
 session_start();
-
+// echo var_dump($_SESSION);
 if ($_SESSION['logged_in']!=true){
     header('Location: ../index.php');
 }
